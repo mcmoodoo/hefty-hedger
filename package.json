@@ -9,7 +9,10 @@
     "start-bob": "tsc && node --loader ts-node/esm src/index.ts --character='characters/bob_the_lending_expert.character.json'",
     "clean": "./scripts/clean.sh",
     "start:service:all": "pm2 start pnpm --name=\"all\" --restart-delay=3000 --max-restarts=10 -- run start:all",
-    "stop:service:all": "pm2 stop all"
+    "stop:service:all": "pm2 stop all",
+    "enc-env": "openssl enc -aes-256-cbc -salt -pbkdf2 -in .env -out .env.magic -pass stdin",
+    "dec-env": "openssl enc -aes-256-cbc -d -salt -pbkdf2 -in .env.magic -out .env -pass stdin"
+
   },
   "dependencies": {
     "@elizaos/adapter-postgres": "0.1.9",
