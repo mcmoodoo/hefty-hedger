@@ -1,9 +1,13 @@
-import { Character, Clients, defaultCharacter, ModelProviderName } from "@elizaos/core";
+import { Character } from "@elizaos/core";
+
+import {bobTheLendingExpertCharacter} from "../characters/bob_the_lending_expert.character.ts"
+
+import DexScreenerPlugin from "../plugin-dexscreener/index.ts";
 
 export const character: Character = {
-    ...defaultCharacter,
+    ...bobTheLendingExpertCharacter,
     // name: "Eliza",
-    // plugins: [],
+    plugins: [DexScreenerPlugin],
     // clients: [],
     // modelProvider: ModelProviderName.OPENAI,
     // settings: {
