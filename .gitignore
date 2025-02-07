@@ -1,7 +1,8 @@
 *.ts
 dist
 !index.ts
-!character.ts
+!characters/*.ts
+!dhedge_supported_tokens.ts
 .env
 node_modules
 dist/
